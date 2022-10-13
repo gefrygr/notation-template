@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-reset.css">
+    <script type="text/javascript">
+    
+        function fillMessage() {
+            var inc = document.getElementById('incident');
+            var com = document.getElementById('company');
+            var nam = document.getElementById('name');
+            var prio = document.getElementById('priority');
+            var pho = document.getElementById('phone');
+            var des = document.getElementById('description');
+            var res = document.getElementById('resolution');
+            var not = document.getElementById('notation');
+            not.value = "Incident: " + "| " + "Name: " + nam.value + "| " + "Phone: " + pho.value + "| " + "Company: " + com.value + "| " + "Priority: " + prio.value  + "| " + "Issue: " + des.value + "| " + "Resolution: " + res.value;        
+        }
+        function copy() {
+            let textarea = document.querySelector("#notation");
+            textarea.select();
+            document.execCommand("copy");
+        }
+    </script>
+    <style>
+        /* <!-- css reset */
+
+        /* http://meyerweb.com/eric/tools/css/reset/ 
+        v2.0 | 20110126
+        License: none (public domain)
+        */
+
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        /* CSS reset ends here */
+
+        /* Body Style start here */
+        .container{
+            position: absolute;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2rem;
+            color: #fff;
+            width: 80%;
+            border-radius: 10px;
+            margin: 50px;
+            padding: 20px;
+            background: rgb(131,58,180);
+            background: linear-gradient(25deg, rgba(131,58,180,1) 0%, rgba(29,169,253,1) 0%, rgba(252,176,69,1) 100%);
+            }
+        .container .header{
+            color: white;
+            font-size: 3rem;
+            text-align: center;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .container .body-container{
+            width: 100%;
+        }
+        .container .body-container .main-body{
+            width: 100%;
+            position: relative;
+        }
+        .container .body-container .main-body .input-fields{
+            width: 100%;
+        }
+        .container .body-container .main-body .input-fields form{
+            margin: 0 auto;
+            width: 80%;
+        }
+        .container .body-container .main-body .input-fields form .form-group{
+            text-align: right;
+            clear: both;
+            float:left;
+            margin-right:15px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .container .body-container .main-body .input-fields form .form-group #incident{
+            margin-left: 29px;
+        }
+        .container .body-container .main-body .input-fields form .form-group #name{
+            margin-left: 45px;
+        }
+        .container .body-container .main-body .input-fields form .form-group #phone{
+            margin-left: 41px;
+        }
+        .container .body-container .main-body .input-fields form .form-group #company{
+            margin-left: 14px;
+        }
+        .container .body-container .main-body .input-fields form .form-group #priority{
+            margin-left: 37px;
+            margin-bottom: 15px;
+        }
+        .container .body-container .main-body .input-fields form .form-group label{
+            margin-top: 0;
+        }
+
+
+        .container .body-container .main-body .input-fields form #notation{
+            margin-left: 131px;
+        }
+        .container .body-container .main-body .input-fields form #description{
+            margin-left: 50px;
+        }
+        .container .body-container .main-body .input-fields form #resolution{
+            margin-left: 5px;
+        }
+
+        .container .body-container .main-body .input-fields form .form-group .right{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .container .body-container .main-body .input-fields form .form-group .right{
+            width: 50%;
+            float: right;
+        }
+    </style>
+    <title>Notation</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Notation</h1>
+        </div>
+        <div class="body-container">
+            <div class="main-body">
+                <div class="input-fields">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Incident:</label>
+                            <input type="text" id="incident" class="left" name="name" onkeyup="fillMessage()">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company:</label>
+                            <input type="text" id="company" class="left" name="company" onkeyup="fillMessage()">
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" class="left" name="name" onkeyup="fillMessage()">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Priority:</label>
+                            <input type="priority" id="priority" class="left" name="priority" onkeyup="fillMessage()">
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone:</label>
+                            <input type="text" id="phone" class="left" name="phone" onkeyup="fillMessage()">
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label class="description" for="description" class="left">Issue:</label>
+                            <textarea id="description" class="left" name="description" rows="4" cols="50" onkeyup="fillMessage()"></textarea>
+                            <br>
+                        </div>
+                        <div class="form-group">
+                            <label class="resolution" for="resolution" class="left">Resolution:</label>
+                            <textarea id="resolution" class="left" name="resolution" rows="4" cols="50" onkeyup="fillMessage()"></textarea>
+                            <br>
+                        </div>
+                        <textarea id="notation" .right name="notation" rows="20" cols="50"></textarea>
+                        <button type="button" onclick="copy()">Copy</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
